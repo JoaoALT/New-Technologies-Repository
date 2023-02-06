@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8"><!--metadata, tipo de alfabeto, utf-8 es alfabeto latino-->
+    <meta name="viewport" content="width-device-width, initial-scale=1"><!--viewport-->
+    <title>Second class webpage</title>
+
+</head>
+
+<body>
+<div class="Head">
+    <div class="Title1">
+        <h1>1.Botones con acciones y mensajes &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h1>
+    </div>
+    <div class="Views">
+        <h1 type="float" id="ViewCount">1</h1>
+    </div>
+</div>
+
+    <hr>
+    <button onclick="OpenTab()" id="OGButton">Botón basico</button><br>
+    <br>
+    <button onclick="action_1()" id="Button1">Botón 1</button><br><br>
+    <button onclick="action_2()" id="Button2">Botón 2</button><br><br>
+    <button onclick="action_3()" id="Button3">Botón 3</button><br><br>
+
+    <h2>2.Despliegue de datos</h2>
+
+    <p>A continuación por favor colaborenos rellenando las siguientes pregúntas:</p>
+    
+    Primer nombre: <input type="text" name="GetFirstName" id="Txb_1">
+    Segúndo nombre: <input type="text" name="GetSurName" id="Txb_2"><br><br>
+
+    <div class="LastsNames">
+        <div class="FirstLN">
+            <p>Primer apellido <input type="text" name="GetLastName1" id="Txb_3"></p>
+        </div>
+
+        <div class="SecondLN">
+            <p>Segúndo apellido <input type="text" name="GetLastName2" id="Txb_4"></p>
+        </div>
+    </div>
+    <!-- <wbr> same line*-->
+   <button onclick="action_4()" id="Button4">Concatenar</button>
+   <br><br>
+
+   Nombre Completo:&nbsp;<output id="Output1"></output>
+   <output id="Output2"></output>
+
+    <style type="text/css">
+        .Head{
+            display: flex;
+        }
+
+        body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-image: url("ModcatT.png");
+            background-color: rgb(255, 222, 172);
+            background-repeat: space;
+            color: rgb(0, 0, 0);
+        }
+        p{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            /*border-style: dotted dashed solid double;*/
+        }
+        h1{
+            color: rgba(179, 25, 66, 1)
+        }
+        h2{
+            color: rgba(216,6,33,1)
+        }
+        #Output1{
+            color: rgb(255, 87, 51)
+
+        }
+        .LastsNames{
+            display: flex;
+        }
+        button{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            float: left;
+            display: flex;
+        }
+    </style>
+
+    <script type="text/javascript">
+        //comentario javascript--
+        function OpenTab(){
+            let x = Math.random()*10;
+            if (x < 5){
+                const url = 'https://youtu.be/dQw4w9WgXcQ';
+                window.open(url);
+            }
+            else{
+                const url = 'https://youtu.be/L_jWHffIx5E';
+                window.open(url);
+            }
+
+        }
+        function action_1(){
+            alert("Hello!!!")
+        }
+        function action_2(){
+            confirm("Holo!!!!")
+        }
+        function action_3(){
+            alert("Action Button 3")
+            confirm("Confirmation Button 3")
+        }
+        function action_4(){
+            var CompleteName = document.getElementById("Txb_1").value+" "+
+            document.getElementById("Txb_2").value+" "+
+            document.getElementById("Txb_3").value+" "+
+            document.getElementById("Txb_4").value
+
+            var Names = document.getElementById("Txb_1").value+" "+
+            document.getElementById("Txb_2").value
+
+            var LNames = document.getElementById("Txb_3").value+" "+
+            document.getElementById("Txb_4").value
+            
+            alert(CompleteName)
+            document.getElementById("Output1").innerHTML = Names
+
+            document.getElementById("Output2").innerHTML = LNames
+
+        }
+
+    </script>
+
+</body>
+</html>
